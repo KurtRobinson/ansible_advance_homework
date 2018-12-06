@@ -45,6 +45,7 @@
   register: result
   tags:
     - test.servers
+    - osp_wait_availability
 
 - name: Wait for server to be available
   wait_for:
@@ -57,3 +58,4 @@
     - "{{ result.ansible_facts.openstack_servers }}"
   tags:
     - test.servers
+    - osp_wait_availability
